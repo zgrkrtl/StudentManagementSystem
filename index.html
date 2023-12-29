@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/script.js" defer></script>
+  </head>
+  <body>
+    <h1>Student Management System</h1>
+    <div class="container">
+      <!--Add course section-->
+      <section class="add-course">
+        <h2>Add Course</h2>
+        <form id="addCourseForm">
+          <label for="courseName">Course Name:</label>
+          <input type="text" id="courseName" name="courseName" required />
+
+          <label for="gradingScale">Grading Scale:</label>
+          <select id="gradingScale" name="gradingScale">
+            <option value="10">10 point Scale</option>
+            <option value="7">7 point scale</option>
+          </select>
+
+          <button id="addCourseBtn">Add Course</button>
+        </form>
+
+        <hr />
+        <!--List courses-->
+        <button id="listCoursesBtn">List Courses</button>
+        <table id="CoursesTable"></table>
+      </section>
+      <!--Enroll existing student to course-->
+      <section class="add-student-scores">
+        <h2>Enroll Existing Student</h2>
+        <section class="select-course">
+          <select id="courseSelect"></select>
+        </section>
+        <form id="enrollStudent">
+          <label for="studentID">Student ID:</label>
+          <input type="text" id="studentID" name="studentID" required />
+
+          <label for="midtermScore">Midterm Score:</label>
+          <input type="text" id="midtermScore" name="midtermScore" required />
+
+          <label for="finalScore">Final Score:</label>
+          <input type="text" id="finalScore" name="finalScore" required />
+
+          <button id="enrollStudentBtn">Enroll Student</button>
+        </form>
+        <div id="failureMessage" style="color: red; margin-top: 10px"></div>
+        <div id="successMessage" style="color: green; margin-top: 10px"></div>
+      </section>
+    </div>
+    <div class="container">
+      <section class="view-student-scores">
+        <h2>View Student Scores</h2>
+        <input
+          type="number"
+          id="viewStudentScores"
+          name="viewStudentScores"
+          required />
+        <button id="viewStudentScoresBtn">View Student Scores</button>
+        <table id="studentScoresTable"></table>
+      </section>
+
+      <section class="calculate-gpa">
+        <h2>Calculate GPA</h2>
+        <button id="calculateGpaBtn">Calculate GPA</button>
+      </section>
+    </div>
+    <div class="container">
+      <section class="search-student-scores">
+        <h2>Search for Student Scores</h2>
+        <form id="searchStudentForm">
+          <label for="searchStudentName">Search Student Name:</label>
+          <input
+            type="text"
+            id="searchStudentName"
+            name="searchStudentName"
+            required />
+          <button id="searchStudentScoresBtn">Search Student Scores</button>
+        </form>
+      </section>
+      <section class="AddStudent">
+        <h2>Add Student</h2>
+        <form id="addStudent">
+          <label for="studentID">Student ID:</label>
+          <input type="text" id="studentID" name="studentID" required />
+
+          <label for="firstName">First Name:</label>
+          <input type="text" id="firstName" name="firstName" required />
+
+          <label for="lastName">Last Name:</label>
+          <input type="text" id="lastName" name="lastName" required />
+
+          <button id="addStudentBtn">Add Student</button>
+          <div id="failureMessage" style="color: red; margin-top: 10px"></div>
+          <div id="successMessage" style="color: green; margin-top: 10px"></div>
+        </form>
+      </section>
+      <section class="view-students">
+        <h2>View Students</h2>
+        <button id="viewStudentsBtn">View Students</button>
+        <table id="viewStudentsTable"></table>
+      </section>
+    </div>
+  </body>
+</html>
