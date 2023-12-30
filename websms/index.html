@@ -10,7 +10,7 @@
   <body>
     <h1>Student Management System</h1>
     <div class="container">
-      <!--Add course section-->
+      <!--Add course -->
       <section class="add-course">
         <h2>Add Course</h2>
         <form id="addCourseForm">
@@ -54,6 +54,7 @@
       </section>
     </div>
     <div class="container">
+      <!--view-student-scores-->
       <section class="view-student-scores">
         <h2>View Student Scores</h2>
         <input
@@ -64,30 +65,32 @@
         <button id="viewStudentScoresBtn">View Student Scores</button>
         <table id="studentScoresTable"></table>
       </section>
-
-      <section class="calculate-gpa">
-        <h2>Calculate GPA</h2>
-        <button id="calculateGpaBtn">Calculate GPA</button>
+      <!--search-student-->
+      <section class="search-student">
+        <h2>Search for Student</h2>
+        <form id="searchStudentForm2">
+          <label for="searchStudentName2">Search Student Name:</label>
+          <input
+            type="text"
+            id="searchStudentName2"
+            name="searchStudentName2"
+            required />
+          <button id="searchStudentsBtn">Search Student Scores</button>
+        </form>
+        <table id="SearchStudentsTable"></table>
       </section>
     </div>
     <div class="container">
-      <section class="search-student-scores">
-        <h2>Search for Student Scores</h2>
-        <form id="searchStudentForm">
-          <label for="searchStudentName">Search Student Name:</label>
-          <input
-            type="text"
-            id="searchStudentName"
-            name="searchStudentName"
-            required />
-          <button id="searchStudentScoresBtn">Search Student Scores</button>
-        </form>
-      </section>
+      <!--Add-student-->
       <section class="AddStudent">
         <h2>Add Student</h2>
         <form id="addStudent">
-          <label for="studentID">Student ID:</label>
-          <input type="text" id="studentID" name="studentID" required />
+          <label for="studentIDAddStudent">Student ID:</label>
+          <input
+            type="text"
+            id="studentIDAddStudent"
+            name="studentID"
+            required />
 
           <label for="firstName">First Name:</label>
           <input type="text" id="firstName" name="firstName" required />
@@ -96,8 +99,10 @@
           <input type="text" id="lastName" name="lastName" required />
 
           <button id="addStudentBtn">Add Student</button>
-          <div id="failureMessage" style="color: red; margin-top: 10px"></div>
-          <div id="successMessage" style="color: green; margin-top: 10px"></div>
+          <div id="failureMessage2" style="color: red; margin-top: 10px"></div>
+          <div
+            id="successMessage2"
+            style="color: green; margin-top: 10px"></div>
         </form>
       </section>
       <section class="view-students">
