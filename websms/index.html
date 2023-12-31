@@ -8,10 +8,21 @@
     <script src="./js/script.js" defer></script>
   </head>
   <body>
-    <h1>Student Management System</h1>
+    <nav>
+      <h1>MSKU</h1>
+      <a href="#add-course">Add Course</a>
+      <a href="#add-course">List Course</a>
+      <a href="#add-student-scores">Add Student Score</a>
+      <a href="#view-student-scores">View Student Scores</a>
+      <a href="#search-student">Search Student</a>
+      <a href="#AddStudent">Add Student</a>
+      <a href="#listCourses">View Students</a>
+    </nav>
+    <h1 class="h1-title">STUDENT MANAGEMENT SYSTEM</h1>
+    <hr />
     <div class="container">
       <!--Add course -->
-      <section class="add-course">
+      <section id="add-course" class="add-course">
         <h2>Add Course</h2>
         <form id="addCourseForm">
           <label for="courseName">Course Name:</label>
@@ -26,13 +37,13 @@
           <button id="addCourseBtn">Add Course</button>
         </form>
 
-        <hr />
         <!--List courses-->
+        <h2 id="listCourses">List Course</h2>
         <button id="listCoursesBtn">List Courses</button>
         <table id="CoursesTable"></table>
       </section>
       <!--Enroll existing student to course-->
-      <section class="add-student-scores">
+      <section id="add-student-scores" class="add-student-scores">
         <h2>Enroll Existing Student</h2>
         <section class="select-course">
           <select id="courseSelect"></select>
@@ -52,37 +63,8 @@
         <div id="failureMessage" style="color: red; margin-top: 10px"></div>
         <div id="successMessage" style="color: green; margin-top: 10px"></div>
       </section>
-    </div>
-    <div class="container">
-      <!--view-student-scores-->
-      <section class="view-student-scores">
-        <h2>View Student Scores</h2>
-        <input
-          type="number"
-          id="viewStudentScores"
-          name="viewStudentScores"
-          required />
-        <button id="viewStudentScoresBtn">View Student Scores</button>
-        <table id="studentScoresTable"></table>
-      </section>
-      <!--search-student-->
-      <section class="search-student">
-        <h2>Search for Student</h2>
-        <form id="searchStudentForm2">
-          <label for="searchStudentName2">Search Student Name:</label>
-          <input
-            type="text"
-            id="searchStudentName2"
-            name="searchStudentName2"
-            required />
-          <button id="searchStudentsBtn">Search Student Scores</button>
-        </form>
-        <table id="SearchStudentsTable"></table>
-      </section>
-    </div>
-    <div class="container">
       <!--Add-student-->
-      <section class="AddStudent">
+      <section id="AddStudent" class="AddStudent">
         <h2>Add Student</h2>
         <form id="addStudent">
           <label for="studentIDAddStudent">Student ID:</label>
@@ -105,11 +87,41 @@
             style="color: green; margin-top: 10px"></div>
         </form>
       </section>
+    </div>
+    <hr />
+    <div class="container">
+      <!--view-student-scores-->
+      <section id="view-student-scores" class="view-student-scores">
+        <h2>View Student Scores(By Course ID)</h2>
+        <input
+          type="number"
+          id="viewStudentScores"
+          name="viewStudentScores"
+          required />
+        <button id="viewStudentScoresBtn" class>View Student Scores</button>
+        <table id="studentScoresTable"></table>
+      </section>
+      <!--search-student-->
+      <section id="search-student" class="search-student">
+        <h2>Search for Student</h2>
+        <form id="searchStudentForm2">
+          <label for="searchStudentName2">Search Student Name:</label>
+          <input
+            type="text"
+            id="searchStudentName2"
+            name="searchStudentName2"
+            required />
+          <button id="searchStudentsBtn">Search Student Scores</button>
+        </form>
+        <table id="SearchStudentsTable"></table>
+      </section>
       <section class="view-students">
         <h2>View Students</h2>
         <button id="viewStudentsBtn">View Students</button>
         <table id="viewStudentsTable"></table>
       </section>
     </div>
+    <div class="container"></div>
+    <a href="#"><button id="toTopBtn">↑</button></a>
   </body>
 </html>

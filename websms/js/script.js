@@ -151,6 +151,64 @@ const students = [
   new Student(1, "John", "Doe"),
   new Student(2, "Alice", "Smith"),
   new Student(3, "Alex", "Fury"),
+  new Student(4, "Emily", "Johnson"),
+  new Student(5, "Michael", "Brown"),
+  new Student(6, "Sophia", "Garcia"),
+  new Student(7, "William", "Martinez"),
+  new Student(8, "Olivia", "Anderson"),
+  new Student(9, "Daniel", "Wilson"),
+  new Student(10, "Ava", "Thompson"),
+  new Student(11, "Ethan", "Perez"),
+  new Student(12, "Mia", "Davis"),
+  new Student(12, "Mia", "Davis"),
+  new Student(13, "Liam", "Gonzalez"),
+  new Student(14, "Isabella", "Miller"),
+  new Student(15, "James", "Taylor"),
+  new Student(16, "Charlotte", "Hernandez"),
+  new Student(17, "Benjamin", "Moore"),
+  new Student(18, "Amelia", "Gutierrez"),
+  new Student(19, "Mason", "Robinson"),
+  new Student(20, "Harper", "Clark"),
+  new Student(21, "Evelyn", "Lewis"),
+  new Student(22, "Logan", "Lee"),
+  new Student(23, "Avery", "Walker"),
+  new Student(24, "Sofia", "Hall"),
+  new Student(25, "Jackson", "Green"),
+  new Student(26, "Ella", "Adams"),
+  new Student(27, "Jack", "Hill"),
+  new Student(28, "Aria", "Baker"),
+  new Student(29, "Lucas", "Wright"),
+  new Student(30, "Scarlett", "King"),
+  new Student(31, "Jacob", "Lopez"),
+  new Student(32, "Madison", "Young"),
+  new Student(33, "Luna", "Harris"),
+  new Student(34, "Gabriel", "Turner"),
+  new Student(35, "Aiden", "Scott"),
+  new Student(36, "Zoe", "Phillips"),
+  new Student(37, "Carter", "Campbell"),
+  new Student(38, "Grace", "Evans"),
+  new Student(39, "Nathan", "Parker"),
+  new Student(40, "Lily", "Morris"),
+  new Student(41, "Elijah", "Ramirez"),
+  new Student(42, "Aubrey", "Price"),
+  new Student(43, "Zachary", "Barnes"),
+  new Student(44, "Hailey", "Coleman"),
+  new Student(45, "David", "Peterson"),
+  new Student(46, "Aaliyah", "Cooper"),
+  new Student(47, "Samuel", "Reed"),
+  new Student(48, "Nora", "Sanders"),
+  new Student(49, "Christopher", "Nguyen"),
+  new Student(50, "Penelope", "Ross"),
+  new Student(51, "Isaac", "Foster"),
+  new Student(52, "Hannah", "Gordon"),
+  new Student(53, "Anthony", "Sullivan"),
+  new Student(54, "Eleanor", "Ward"),
+  new Student(55, "Andrew", "Jenkins"),
+  new Student(56, "Stella", "Butler"),
+  new Student(57, "Wyatt", "Murphy"),
+  new Student(58, "Victoria", "Perry"),
+  new Student(59, "Nicholas", "Long"),
+  new Student(60, "Maya", "Fisher"),
 ];
 // and only Alice Smith is enrolled to two courses firstly
 students[1].enrollCourse(courses[0], 25, 45);
@@ -317,7 +375,33 @@ document
     document.getElementById("finalScore").value = "";
   });
 
-//List Students
+function deleteStudent(id) {
+  const index = students.findIndex((student) => student.getId() === id);
+  if (index !== -1) {
+    students.splice(index, 1);
+    const studentsTable = document.getElementById("viewStudentsTable");
+    studentsTable.innerHTML = `
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th></th>
+      </tr>`;
+    students.forEach((student) => {
+      const row = `
+        <tr>
+          <td>${student.getId()}</td>
+          <td>${student.getName()}</td>
+          <td>${student.getSurname()}</td>
+          <td><button onclick="deleteStudent(${student.getId()})">unlist</button></td>
+        </tr>
+      `;
+      studentsTable.innerHTML += row;
+    });
+  }
+}
+
+//List-view Students
 document
   .getElementById("viewStudentsBtn")
   .addEventListener("click", function (event) {
@@ -328,6 +412,7 @@ document
     <th>ID</th>
     <th>Name</th>
     <th>Surname</th>
+    <th></th>
 
     </tr>`;
 
@@ -337,6 +422,7 @@ document
         <td>${student.getId()}</td>
         <td>${student.getName()}</td>
         <td>${student.getSurname()}</td>
+        <td><button onclick="deleteStudent(${student.getId()})">unlist</button></td>
 
       </tr>
     `;
